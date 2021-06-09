@@ -5,5 +5,5 @@
     - [HTML5](/html5.md) 
 - Setting up the streams
     - [Stream Requirements](/stream-requirements.md)    
-    - [AWS-NexPlayer](/aws-nexplayer.md)    
+    - [Using AWS Streams](/aws-nexplayer.md)    
 - [Request Demo](https://nexplayersdk.com/ios-player-sdk/) 

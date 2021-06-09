@@ -7,15 +7,14 @@ NexPlayer synchronization can be enabled by setting the following property:
 mNexPlayer.setProperty(NexPlayer.NexProperty.ENABLE_SPD_SYNC_TO_GLOBAL_TIME, 1);
 ```
 
-To set the SPD value from the client side for both DASH and HLS you can set the
-SPD value with the property ```SET_PRESENTATION_DELAY``` as shown below:
+To set the SPD value from the client side you can set the SPD value with the property ```SET_PRESENTATION_DELAY``` as shown below:
 
 ```java
 mNexPlayer.setProperty(NexProperty.SET_PRESENTATION_DELAY, 10000);
 ```
 
 Note that if the value of ```SET_PRESENTATION_DELAY``` is too large, the player may not
-find the delayed segment provided by the live content server.
+find the delayed segment provided by the live content server. You should optimise the presentation delay according to your use case.
 
 
 ## Advanced configuration
@@ -68,8 +67,10 @@ Default: 5000 (5 seconds)
 
 - Our NexPlayer Android SDK supports Android 4.4 and above but NexPlayer Multiview feature requires an high-end device as it depends on the device performance. At least Android 10+ should be targeted and device performance should be considered.
 
-- For HLS, you should set ```SET_PRESENTATION_DELAY``` property as mentioned
-above.
-
 - You should make sure there is enough distance from the live edge to provide
 a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```SET_PRESENTATION_DELAY``` properties. If there is not enough space to buffer from the live edge, playback might be effected.
+
+- In case of Widevine DRM is enabled, Widevine Level 3 should be allowed on the DRM Server.
+
+- For HLS, you should set ```SET_PRESENTATION_DELAY``` property as mentioned
+above.

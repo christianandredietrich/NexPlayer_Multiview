@@ -1,9 +1,5 @@
 # NexPlayer with AWS Media Services - Integration Guide
 
-## Live Streams
-
-### Overview
-
 In order to use NexPlayer’s streaming capabilities in your NexPlayer
 project, you will need to have a video player stack which can stream in
 formats compatible with your target devices. In this guide we will set up a
@@ -23,28 +19,16 @@ MediaTailor [optional If Serving Ads] -> Amazon Cloudfront-> NexPlayer
 
 The key components are:
 
-1. Simulated live stream support. We will use a video file hosted in
-    Amazon **S3**.
-2. Live content conversion support. We will use AWS Elemental
-    **MediaLive** in this guide.
-3. Distribution creation support. We will use AWS Elemental
-    **MediaPackage** in this guide.
-4. Video content delivery support. We will use Amazon **CloudFront** in this
-    guide.
-5. In order to insert ads, your content will need SCTE markers. We will use
-    AWS **Lambda** to insert ad markers.
-6. Ad decision server support. We will make a static VAST response XML
-    ad decision server **ADS**.
-7. Ad insertion support. We will use AWS Elemental **MediaTailor** in this
-    guide.
-8. Function scheduling support. We will use Amazon **CloudWatch** in this
-    guide.
-9. A capable device. Currently NexPlayer is supported on many devices
-    including **iOS,Android, PlayStation, Xbox, WebOS,Tizen** and more!
-
-
-10. Encoder support. We will create a live stream using the free and
-    open source tool Open Broadcaster Software **OBS** in this guide.
+1. Simulated live stream support. We will use a video file hosted in Amazon **S3**.
+2. Live content conversion support. We will use AWS Elemental **MediaLive** in this guide.
+3. Distribution creation support. We will use AWS Elemental **MediaPackage** in this guide.
+4. Video content delivery support. We will use Amazon **CloudFront** in this guide.
+5. In order to insert ads, your content will need SCTE markers. We will use AWS **Lambda** to insert ad markers.
+6. Ad decision server support. We will make a static VAST response XML ad decision server **ADS**.
+7. Ad insertion support. We will use AWS Elemental **MediaTailor** in this guide.
+8. Function scheduling support. We will use Amazon **CloudWatch** in this guide.
+9. A capable device. Currently NexPlayer is supported on many device including **iOS,Android, PlayStation, Xbox, WebOS,Tizen** and more!
+10. Encoder support. We will create a live stream using the free and open source tool Open Broadcaster Software **OBS** in this guide.
 
 ### Live Stream with Amazon S3
 
@@ -215,7 +199,7 @@ You can learn more about our Ad Decision Server [here](https://aws.amazon.com/bl
 
 - Take the sample xml below and replace the CDATA [video] with a link to your video.
        
-```
+```xml
 <VAST version="3.0">
 		<Ad>
 		<InLine>
@@ -240,9 +224,6 @@ You can learn more about our Ad Decision Server [here](https://aws.amazon.com/bl
 </VAST>
 ```
 
-
-​	
-​	
 - Upload your xml file to your public S3 bucket.
 - Once the xml is uploaded, navigate to it and make it public.
 	- Click the checkbox next to the video

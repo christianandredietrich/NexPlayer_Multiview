@@ -3,19 +3,17 @@
 NexPlayer synchronization can be enabled by setting the following property:
 
 
-```java
-mNexPlayer.setProperty(NexPlayer.NexProperty.ENABLE_SPD_SYNC_TO_GLOBAL_TIME, 1);
+```swift
+player.setProperty(NXPropertyEnableSpdSyncToGlobalTime, value: 1 as NSObject)
 ```
 
-To set the SPD value from the client side for both DASH and HLS you can set the
-SPD value with the property ```SET_PRESENTATION_DELAY``` as shown below:
+To set the SPD value from the client side you can set the SPD value with the property ```NXPropertySuggestedPresentationDelayTime``` as shown below:
 
-```java
-mNexPlayer.setProperty(NexProperty.SET_PRESENTATION_DELAY, 10000);
+```swift
+player.setProperty(NXPropertySuggestedPresentationDelayTime, value: 5000 as NSObject)
 ```
 
-Note that if the value of ```SET_PRESENTATION_DELAY``` is too large, the player may not
-find the delayed segment provided by the live content server.
+Note that if the value of ```NXPropertySuggestedPresentationDelayTime``` is too large, the player may not find the delayed segment provided by the live content server. You should optimise the presentation delay according to your use case.
 
 
 ## Advanced configuration
@@ -27,8 +25,8 @@ properties.
 
 By default, our synchronization feature depends on the server time, which is only in seconds. When this option is turned on, device time will be used instead. This property makes the synchronization more accurate as it is in milliseconds but keep in mind that if the device time is not set correctly, there might be discrepancies between different devices.
 
-```java
-mNexPlayer.setProperty(NexPlayer.NexProperty.ENABLE_SPD_SYNC_TO_DEVICE_TIME, 1);
+```swift
+player.setProperty(NXPropertyEnableSpdSyncToDeviceTime, value: 1 as NSObject)
 ```
 
 Default: 0
@@ -41,10 +39,10 @@ Values:
 
 ### Synchronization Speed Control Range
 
-Player will keep the syncronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```SET_SPD_SYNC_DIFF_TIME``` property.
+Player will keep the syncronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```NXPropertySpdSyncDiffTime``` property.
 
-```java
-mNexPlayer.setProperty(NexPlayer.NexProperty.SET_SPD_SYNC_DIFF_TIME, 500);
+```swift
+player.setProperty(NXPropertySpdSyncDiffTime, value: 300 as NSObject)
 ```
 
 Unit: msec (1/1000 sec)
@@ -55,8 +53,8 @@ Default: 300 (300 msec)
 
 If playback is out of synchronization more than this value, the player will make a seek to synchronize the video rather than changing the playback speed.
 
-```java
-mNexPlayer.setProperty(NexPlayer.NexProperty.SET_SPD_TOO_MUCH_DIFF_TIME,5000);
+```swift
+player.setProperty(NXPropertySpdTooMuchDiffTime, value: 5000 as NSObject)
 ```
 
 Unit: msec (1/1000 sec)
@@ -66,10 +64,12 @@ Default: 5000 (5 seconds)
 
 ## Requirements
 
-- Our NexPlayer Android SDK supports Android 4.4 and above but NexPlayer Multiview feature requires an high-end device as it depends on the device performance. At least Android 10+ should be targeted and device performance should be considered.
-
-- For HLS, you should set ```SET_PRESENTATION_DELAY``` property as mentioned
-above.
+- Our NexPlayer iOS SDK supports iOS 11 and above but NexPlayer Multiview feature requires an high-end device as it depends on the device performance. At least iOS 13+ should be targeted and device performance should be considered.
 
 - You should make sure there is enough distance from the live edge to provide
-a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```SET_PRESENTATION_DELAY``` properties. If there is not enough space to buffer from the live edge, playback might be effected.
+a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```NXPropertySuggestedPresentationDelayTime``` properties. If there is not enough space to buffer from the live edge, playback might be effected.
+
+- Video encoders should be syncronised and should be embedding correct timestamp for the  video streams
+
+- For HLS, you should set ```NXPropertySuggestedPresentationDelayTime``` property as mentioned
+above.
