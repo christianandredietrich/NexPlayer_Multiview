@@ -6,4 +6,4 @@
 - Setting up the streams
     - [Stream Requirements](/stream-requirements.md)    
     - [Using AWS Streams](/aws-nexplayer.md)    
-- [Request Demo](https://nexplayersdk.com/ios-player-sdk/) 
+- [Request Demo](https://nexplayersdk.com/multiview-sdk/) 
