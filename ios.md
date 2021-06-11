@@ -39,7 +39,7 @@ Values:
 
 ### Synchronization Speed Control Range
 
-Player will keep the syncronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```NXPropertySpdSyncDiffTime``` property.
+Player will keep the synchronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```NXPropertySpdSyncDiffTime``` property.
 
 ```swift
 player.setProperty(NXPropertySpdSyncDiffTime, value: 300 as NSObject)
@@ -64,12 +64,12 @@ Default: 5000 (5 seconds)
 
 ## Requirements
 
-- Our NexPlayer iOS SDK supports iOS 11 and above but NexPlayer Multiview feature requires an high-end device as it depends on the device performance. At least iOS 13+ should be targeted and device performance should be considered.
+- Our NexPlayer iOS SDK supports iOS 11 and above but the NexPlayer Multiview feature requires a high-end device as it depends on the device performance. At least iOS 13+ should be targeted and device performance should be considered.
 
 - You should make sure there is enough distance from the live edge to provide
-a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```NXPropertySuggestedPresentationDelayTime``` properties. If there is not enough space to buffer from the live edge, playback might be effected.
+a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```NXPropertySuggestedPresentationDelayTime``` properties. If there is not enough space to buffer from the live edge, playback might be affected.
 
-- Video encoders should be syncronised and should be embedding correct timestamp for the  video streams
+- Video encoders should be synchronized and should be embedding correct timestamp for the  video streams
 
-- For HLS, you should set ```NXPropertySuggestedPresentationDelayTime``` property as mentioned
-above.
+- For HLS, you should set the ```NXPropertySuggestedPresentationDelayTime``` property as mentioned above.
+

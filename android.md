@@ -13,14 +13,12 @@ To set the SPD value from the client side you can set the SPD value with the pro
 mNexPlayer.setProperty(NexProperty.SET_PRESENTATION_DELAY, 10000);
 ```
 
-Note that if the value of ```SET_PRESENTATION_DELAY``` is too large, the player may not
-find the delayed segment provided by the live content server. You should optimise the presentation delay according to your use case.
-
+Note that if the value of ```SET_PRESENTATION_DELAY``` is too large, the player may not find the delayed segment provided by the live content server. You should optimise the presentation delay according to your use case.
 
 ## Advanced configuration
 
-You can control the synchronization behaviour further by adjusting the below
-properties.
+You can control the synchronization behaviour further by adjusting the below properties.
+
 
 ### Synchronization Accuracy
 
@@ -40,7 +38,7 @@ Values:
 
 ### Synchronization Speed Control Range
 
-Player will keep the syncronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```SET_SPD_SYNC_DIFF_TIME``` property.
+Player will keep the synchronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```SET_SPD_SYNC_DIFF_TIME``` property.
 
 ```java
 mNexPlayer.setProperty(NexPlayer.NexProperty.SET_SPD_SYNC_DIFF_TIME, 500);
@@ -65,12 +63,15 @@ Default: 5000 (5 seconds)
 
 ## Requirements
 
-- Our NexPlayer Android SDK supports Android 4.4 and above but NexPlayer Multiview feature requires an high-end device as it depends on the device performance. At least Android 10+ should be targeted and device performance should be considered.
+- Our NexPlayer Android SDK supports Android 4.4 and above but the NexPlayer Multiview feature requires a high-end device as it depends on the device performance. At least Android 10+ should be targeted and device performance should be considered.
 
 - You should make sure there is enough distance from the live edge to provide
-a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```SET_PRESENTATION_DELAY``` properties. If there is not enough space to buffer from the live edge, playback might be effected.
+a smooth playback which should be adjusted with *suggestedPresentationDelay* and ```SET_PRESENTATION_DELAY``` properties. If there is not enough space to buffer from the live edge, playback might be affected.
 
-- In case of Widevine DRM is enabled, Widevine Level 3 should be allowed on the DRM Server.
+- In case Widevine DRM is enabled, Widevine Level 3 should be allowed on the DRM Server.
 
-- For HLS, you should set ```SET_PRESENTATION_DELAY``` property as mentioned
-above.
+- Video encoders should be synchronized and should be embedding correct timestamp for the  video streams
+
+- For HLS, you should set the ```SET_PRESENTATION_DELAY``` property as mentioned above.
+
+
