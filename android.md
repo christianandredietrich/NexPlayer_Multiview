@@ -2,7 +2,6 @@
 
 NexPlayer synchronization can be enabled by setting the following property:
 
-
 ```java
 mNexPlayer.setProperty(NexPlayer.NexProperty.ENABLE_SPD_SYNC_TO_GLOBAL_TIME, 1);
 ```
