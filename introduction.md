@@ -31,8 +31,8 @@ It is also possible to override that value from the client-side and control it w
 
 **Disclaimer for Intellectual Property**
 
-This product is designed for general purposes and accordingly, the customer is responsible for all or any of the intellectual property licenses required for actual application. NexStreaming Corp. does not provide any indemnification for any intellectual properties owned by third parties.
+This product is designed for general purposes and accordingly, the customer is responsible for all or any of the intellectual property licenses required for actual application. NexStreaming. does not provide any indemnification for any intellectual properties owned by third parties.
 
 **Copyright**
 
-Copyright for all documents, drawings and programs related to this specification are owned by NexStreaming Corp. All or any part of the specification shall not be reproduced or distributed without prior written approval by NexStreaming Corp. Content and configuration of all or any part of the specification shall not be modified nor distributed without prior written approval by NexStreaming Corp.
+Copyright for all documents, drawings and programs related to this specification are owned by NexStreaming. All or any part of the specification shall not be reproduced or distributed without prior written approval by NexStreaming. Content and configuration of all or any part of the specification shall not be modified nor distributed without prior written approval by NexStreaming.
