@@ -23,7 +23,7 @@ properties.
 
 ### Synchronization Accuracy
 
-By default, our synchronization feature depends on the server time, which is only in seconds. When this option is turned on, device time will be used instead. This property makes the synchronization more accurate as it is in milliseconds but keep in mind that if the device time is not set correctly, there might be discrepancies between different devices.
+By default, our synchronization feature depends on the server time, which is only in seconds. When the `NXPropertyEnableSpdSyncToDeviceTime` option is turned on, device time will be used instead. This property makes the synchronization more accurate as it is in milliseconds but keep in mind that if the device time is not set correctly, there might be discrepancies between different devices.
 
 ```swift
 player.setProperty(NXPropertyEnableSpdSyncToDeviceTime, value: 1 as NSObject)
