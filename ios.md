@@ -39,7 +39,7 @@ Values:
 
 ### Synchronization Speed Control Range
 
-Player will keep the synchronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```NXPropertySpdSyncDiffTime``` property.
+The Player will keep the synchronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```NXPropertySpdSyncDiffTime``` property.
 
 ```swift
 player.setProperty(NXPropertySpdSyncDiffTime, value: 300 as NSObject)
@@ -51,7 +51,7 @@ Default: 300 (300 msec)
 
 ### Synchronization Seek Range
 
-If playback is out of synchronization more than this value, the player will make a seek to synchronize the video rather than changing the playback speed.
+If playback is out of synchronization more than this value, the player will seek to synchronize the video rather than changing the playback speed.
 
 ```swift
 player.setProperty(NXPropertySpdTooMuchDiffTime, value: 5000 as NSObject)
