@@ -37,7 +37,7 @@ Values:
 
 ### Synchronization Speed Control Range
 
-Player will keep the synchronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```SET_SPD_SYNC_DIFF_TIME``` property.
+The Player will keep the synchronization by controlling the playback speed as long as the playback position is within this range. You can adjust this threshold with the ```SET_SPD_SYNC_DIFF_TIME``` property.
 
 ```java
 mNexPlayer.setProperty(NexPlayer.NexProperty.SET_SPD_SYNC_DIFF_TIME, 500);
@@ -49,7 +49,7 @@ Default: 300 (300 msec)
 
 ### Synchronization Seek Range
 
-If playback is out of synchronization more than this value, the player will make a seek to synchronize the video rather than changing the playback speed.
+If playback is out of synchronization more than this value, the player will seek to synchronize the video rather than changing the playback speed.
 
 ```java
 mNexPlayer.setProperty(NexPlayer.NexProperty.SET_SPD_TOO_MUCH_DIFF_TIME,5000);
